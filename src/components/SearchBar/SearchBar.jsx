@@ -14,7 +14,7 @@ export default function SearchBar(){
     useEffect(() => {
         ( async () => {
           try {
-            const response = await axios.get(`http://localhost:3001/`)
+            const response = await axios.get(`http://localhost:3000/api/projects`)
             setSearch(response.data)
           } catch (err) {
             console.log(err)
@@ -28,8 +28,11 @@ export default function SearchBar(){
     return (
         <form>
             <input 
-                  type="text" 
-                   placeholder="Search ..." />
+                  type="text"
+                  value={search} 
+                   placeholder="Search ..." 
+                   onChange={(event) => setSearch(event.target.value)}/>
+                  
                 <label>
                  
                 </label>
