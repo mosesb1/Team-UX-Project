@@ -6,13 +6,13 @@ export default function Footer(props) {
                 Settings 
             </button>
             <button>
-                FAQ 
+                About 
             </button>
             <button>
                 Support 
             </button>
             <button>
-                2022 
+                &copy;2022 
             </button>
         </div>
     )

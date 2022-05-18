@@ -3,7 +3,9 @@ const path = require('path');
 // const favicon = require('serve-favicon');
 const logger = require('morgan');
 const projectRouter = require('./routes/api/projects');
-const collaboratorRouter = require('./routes/api/collaborators')
+const collaboratorRouter = require('./routes/api/collaborators');
+const messageRouter = require('./routes/api/messages');
+const messageThreadRouter = require('./routes/api/messageThreads');
 
 
 require('dotenv').config();
@@ -27,8 +29,12 @@ app.use(require('./config/checkToken'));
 
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
-app.use('/api/projects', projectRouter);
-app.use('/api/collaborators', collaboratorRouter)
+
+const ensureLoggedIn = require('./config/ensureLoggedIn');
+app.use('/api/projects', ensureLoggedIn, projectRouter);
+app.use('/api/collaborators', ensureLoggedIn, collaboratorRouter);
+app.use('/api/messages', ensureLoggedIn, messageRouter);
+app.use('/api/messageThreads', ensureLoggedIn, messageThreadRouter);
 
 
 

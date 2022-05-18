@@ -27,10 +27,11 @@
     bottom: 30%;
     color: white;
     border: solid #202020;
-    border-radius: 5px;
+    border-radius: 8px;
     font-family: 'Raleway', sans-serif;
     padding-top: 30px;
     font-size: 32px;
+    font-weight: 700px;
 }
 
 .nav-bar-modal > form > label {
@@ -43,27 +44,33 @@
 .nav-bar-modal > form {
     margin: 0 10% 0 10%;
     color: white;
-    border-radius: 5px;
+    border-radius: 8px;
     font-family: 'Raleway', sans-serif;
 }
 
 .nav-bar-modal > form > label > input {
     color: white;
-    border-radius: 5px;
-    background-color: white;
+    border-radius: 8px;
+    background-color: #C4C4C4;;
     color: black;
-    width: 100%;
     margin: 10px;
-    font-family: 'Raleway', sans-serif;
+    border: 2px solid #26CCD7;
+    width: 560px;
+    height: 44px;
+    position: absolute;
+}
 
+.nav-bar-modal > form > label {
+    margin-left: 10%;
 }
 
 .nav-bar-modal > form > button {
     color: white;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: #26CCD7 ;
     font-family: 'Raleway', sans-serif;
-
+    width: 160px;
+    height: 44px;
 }
 
 
@@ -86,17 +93,33 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Raleway', sans-serif;
-    font-size: 10px;
 }
 
 .login-form-button > button {
     padding: 5px 30px 5px 30px;
-    color: white;
-    border-radius: 5px;
-    background-color: #26CCD7 ;
-    margin: 10px;
+    color: #26CCD7;
+    border-radius: 8px;
+    background-color: #26CCD7;
     background: rgba(38, 204, 215, 0.2);
     border: 1px solid rgba(38, 204, 215, 0.5);
-    border-radius: 8px;
+    width: 160px;
+    height: 44px;
+    font-size: 16px;
+    margin: 40px;
 
+
+    
+}
+
+#signUpButton {
+    background-color: #26CCD7;
+    border: 1px solid rgba(38, 204, 215, 0.5);
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+#signUpButton a {
+    background-color: #26CCD7;
+    text-decoration: none;
+    color: black;
 }

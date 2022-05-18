@@ -2,10 +2,10 @@ import { signUp } from '../../utilities/api/users/users-service'
 import { useState, useEffect } from 'react'
 import { statesList, artistRoles } from '../../utilities/list-items/list-items'
 import { useNavigate } from 'react-router-dom'
+import ImageUploads from '../ImageUploads/ImageUploads'
 
 export default function SignUpForm({ user, setUser }) {
-    
-    const [ counter, setCounter ] = useState(1)
+    const [ image, setImage ] = useState('')
     const [ disableSignUpBtn, setDisableSignUpBtn ] = useState (true)
     const [ formData, setFormData ] = useState({
         firstName: '',
@@ -23,7 +23,8 @@ export default function SignUpForm({ user, setUser }) {
         websiteUrl: '',
         instagramUrl: '',
         pinterestUrl: '',
-        tumblrUrl: ''
+        tumblrUrl: '',
+        profileImageUrl: ''
     })
     const [ page, setPage ] = useState(1)
 
@@ -37,10 +38,6 @@ export default function SignUpForm({ user, setUser }) {
         } else {
             setFormData({...formData, [event.target.name]: event.target.value})
         }
-    }
-
-    const profileImageUpload = (event) => {
-
     }
 
     const changePage = (action) => {
@@ -60,10 +57,11 @@ export default function SignUpForm({ user, setUser }) {
         try {
             delete formData.error
             delete formData.confirm
-            const user = await signUp(formData)
-            setUser(user)
+            const response = await signUp(formData)
+            setUser(response)
+            // console.log(response) // log new user to screen
             // alert(JSON.stringify(formData)) // print sign up state var to the screen
-            navigate('/')
+            
         } catch (error) {
             console.log(error)
         }
@@ -88,6 +86,20 @@ export default function SignUpForm({ user, setUser }) {
         setDisableSignUpBtn(formData.password !== formData.confirm)
     },[formData])
 
+    useEffect(() => {
+        if (image) {
+            console.log(`loading ${image}`)
+            setFormData({...formData, profileImageUrl: image})
+        }
+    }, [image])
+
+    useEffect(() => {
+        if (user) {
+            navigate(`/profile/${user._id}`)
+        }
+    }, [user])
+
+
     return (
         <div className='user-form'>
             <div className="form-container">
@@ -99,7 +111,7 @@ export default function SignUpForm({ user, setUser }) {
                         <h2>Create Account</h2>
 
                         <label>First Name*
-                        <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required /></label>
+                        <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required /></label><br/>
                         <label>Last Name*
                         <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required /></label>
                         <label>Email*
@@ -136,9 +148,9 @@ export default function SignUpForm({ user, setUser }) {
                             {
                                 artistRoles.map((theRole, index) => {
                                     return(
-                                        <div className={`form-column-${index % 3 + 1}`}>
+                                        <div className={`form-column-${index % 3 + 1}`} key={index}>
                                             <label>
-                                                <input type="checkbox" name="roles" value={theRole.role} key={index} onChange={(e) => addRole(e, theRole.role)}/>
+                                                <input type="checkbox" name="roles" value={theRole.role} onChange={(e) => addRole(e, theRole.role)}/>
                                             {theRole.role}</label>
                                         </div>
                                     )
@@ -162,7 +174,11 @@ export default function SignUpForm({ user, setUser }) {
                         <h2>Almost done! Complete your Profile</h2>
                     
                         <div className='profile-image-upload'>
-                            <button onClick={(e) => {profileImageUpload()}}><ion-icon name="person-circle-outline"></ion-icon></button>
+                            {/* <button onClick={(e) => {profileImageUpload()}}><ion-icon name="person-circle-outline"></ion-icon></button> */}
+                            {
+                                image ? <img src={image} /> : ""
+                            }
+                            <ImageUploads image={image} setImage={setImage} /> 
                             <br/>
                             <p>Add a Profile image</p>
                         </div>
@@ -180,7 +196,6 @@ export default function SignUpForm({ user, setUser }) {
                             <input type="url" name="pinterestUrl" value={formData.pinterestUrl} onChange={handleChange} /></label>
                             <label>Tumblr (optional)
                             <input type="url" name="tumblrUrl" value={formData.tumblrUrl} onChange={handleChange} /></label>
-                            <p>Skip for Now &gt;</p>
                         </div>
                         <button type="submit" disabled={disableSignUpBtn}>SIGN UP</button>
                     </div>

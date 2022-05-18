@@ -37,7 +37,7 @@ export default function NavBar({ user, setUser }){
         try {
             const user = await login(formData)
             setUser(user)
-            navigate('/')
+            navigate(`/profile/${user._id}`)
             closeModal()
         } catch (error) {
             console.log(error)
@@ -59,11 +59,10 @@ export default function NavBar({ user, setUser }){
                 <div className='user-navbar-buttons'>
                     <div className='userNavButton'>
                         <button onClick={openModal}>Log In</button>
-                        <button>
+                        <button id="signUpButton">
                             <Link to='/signup'>Sign Up</Link>
                         </button>
                     </div>
-                    <hr/>
                 </div>
                
                 <Modal className='nav-bar-modal fade-in'
@@ -75,10 +74,11 @@ export default function NavBar({ user, setUser }){
                     >
                     <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Log in to your Project Connect account</h2>
                     <form onSubmit={handleSubmit}>
-                        <label>Email Address
-                            <input type='email' name='email' onChange={handleChange}/>
+                        <label>Email Address <br/>
+                            <input type='email' name='email' onChange={handleChange}/><br/>
                         </label>
-                        <label>Password
+                        <br/>
+                        <label>Password<br/>
                             <input type='password' name='password' onChange={handleChange}/>
                         </label>
                         <div className='login-form-button'>
