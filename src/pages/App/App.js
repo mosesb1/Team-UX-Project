@@ -7,7 +7,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import { getUser } from '../../utilities/api/users/users-service';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import CreateProject from '../CreateProject/CreatProject';
-
+import About from '../About/About';
 
 import './App.css';
 export default function App() {
@@ -32,6 +32,9 @@ export default function App() {
         <Route path="/profile/:id" element={<ProfilePage user={user} setUser={setUser} />}/>
     
         <Route path='/create-project' element={<CreateProject user={user} setUser={setUser} />}/>
+
+        <Route path='/about' element={<About />}/>
+
      </Routes>
 
      <Footer />

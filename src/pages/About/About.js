@@ -1,12 +1,4 @@
-import { useState,useEffect } from 'react';
-import {Routes, Route} from 'react-router-dom'
-import HomePage from '../Homepage/Homepage';
-import NavBar from '../../components/NavBar/NavBar';
-import Footer from '../../components/Footer/Footer';
-import AuthPage from '../AuthPage/AuthPage';
-import { getUser } from '../../utilities/api/users/users-service';
-import ProfilePage from '../ProfilePage/ProfilePage';
-
+import '../App/App.css';
 
 export default function About() {
 
@@ -19,7 +11,7 @@ export default function About() {
                     <img src = './images/About/mindy.png' alt="Mindy"/>
                     <p> Project Manager </p>
                     <p> Front-End CSS </p>
-                    <p href="https://github.com/mmillerks"> Github : mmillerks</p> 
+                    <a href="https://github.com/mmillerks"> Github : mmillerks</a> 
                 </div>
                 <div>
                     <h2> Moses Burkhart </h2>
@@ -31,11 +23,11 @@ export default function About() {
                     <h2> Orlando Valadez </h2>
                     {/* <img src/> */}
                     <p> Front-End </p>
-                    {/* <a href=""> Github</a> */}
+                    <a href="https://github.com/Orlandouchiha425"> Github: Orlandouchiha425</a> 
                 </div>
                 <div>
                     <h2> Ashley Webb </h2>
-                    <img src='./images/About/0E7A916 (1).JPG' alt='Ashley'/>
+                    <img src='./images/About/ashley.JPG' alt='Ashley'/>
                     <p> Front-End </p>
                     <a href="https://github.com/ashleywebb"> Github : ashleywebb </a>
                 </div>
@@ -47,7 +39,7 @@ export default function About() {
                 </div> 
                 <div>
                     <h2> Damon Fung</h2>
-                    <img src='./images/About/Damon Photo.jpg' alt='Damon'/>
+                    <img src='./images/About/damon.jpg' alt='Damon'/>
                     <p> Back-End </p>
                     <a href="https://github.com/dfung003"> Github : dfung003</a>
                 </div>
@@ -59,8 +51,9 @@ export default function About() {
                 </div>
                 <div>
                     <h2> Jonathan Suarez </h2>
+                    <img src='./images/About/jonathan.png' alt="Jonathan"/>
                     <p> Back-End </p>
-                    <a href=""> Github : </a>
+                    <a href="https://github.com/jonsuarez92"> Github : jonsuarez92 </a>
                 </div>
                 <div>
                     <h2> Kajsa Brown </h2>
