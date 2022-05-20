@@ -13,7 +13,7 @@ export default function HomePage(){
             </div>
 
             <div className="container">
-                <img src="/images/Homepage/hmpg_img2.png" />
+                <img src="/images/homepage/hmpg_img2.png" />
 
                 <div className="centered">
                     <h1>Find Collaborators for Your Next Project</h1>
