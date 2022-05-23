@@ -1,12 +1,14 @@
 const express = require('express')
 const router = express.Router()
-const { getSendMessage, getReceiveMessage, setMessage, deleteMessage, updateMessage, showMessage } = require('../../controllers/api/messages')
+const { getSendMessage, getReceiveMessage, setMessage, deleteMessage, updateMessage, showMessage, getMessagesByUser } = require('../../controllers/api/messages')
 
 router.get("/sent/:userId", getSendMessage) 
 //
 router.get("/received/:userId", getReceiveMessage)
+// all
+router.get("/all/:userId", getMessagesByUser)
 
-router.post('/', setMessage)
+router.post('/:threadId', setMessage)
 //  Update
 router.put('/:id', updateMessage)
 // delete

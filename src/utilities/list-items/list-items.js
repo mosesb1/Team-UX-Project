@@ -1,4 +1,5 @@
 export const statesList = [
+    {label: '', value: ''},
     {label: 'Alabama', value: 'Alabama'},
     {label: 'Alaska', value: 'Alaska'},
     {label: 'Arizona', value: 'Arizona'},
@@ -51,24 +52,24 @@ export const statesList = [
     {label: 'Wyoming', value: 'Wyoming'}
   ]
 
-export const artistRoles = [
+export const artistRoles=[
     {role: "Photographer"},
-    {role: "Artist"},
-    {role: "Costume Maker"},
     {role: "Model"},
-    {role: "Painter"},
-    {role: "Photo Retoucher"},
     {role: "Make Up Artist"},
-    {role: "Illustrator"},
-    {role: "Prop Maker"},
-    {role: "Hairstylist"},
-    {role: "Digitar Artist"},
-    {role: "Actor"},
+    {role: "Hair stylist"},
     {role: "Wardrobe Stylist"},
-    {role: "Graphic Designer"},
-    {role: "Videographer"},
     {role: "Fashion Designer"},
+    {role: "Artist"},
+    {role: "Painter"},
+    {role: "Illustrator"},
+    {role: "Digital Artist"},
+    {role: "Graphic Designer"},
     {role: "Performer"},
-    {role: "Filmaker"},
-    {role: "other"}
-]
+    {role: "Costume Maker"},
+    {role: "Photo Retoucher"},
+    {role: "Prop Maker"},
+    {role: "Actor"},
+    {role: "Videographer"},
+    {role: "Film Maker"},
+    {role: "Other"}
+  ]

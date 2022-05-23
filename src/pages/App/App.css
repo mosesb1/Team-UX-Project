@@ -126,11 +126,10 @@ h1 {
     background-color: #202020;
     color: white;
     width: 500px;
-    margin-left: 40%;
+    margin-left: 48%;
     margin-right: 25%;
     margin-top: 20%;
     font-family: 'Raleway', sans-serif;
-    /* position: absolute; */
     transform: translate(-50%,-50%);
     
 }
@@ -146,15 +145,8 @@ h1 {
 .signup-form-page input[type="text"] {
     width: 255px;
     height: 44px;
-    /* position: absolute; */
 }
 
-#firstName-su input[type="text"]{
-    left: 0%;
-    right: 0%;
-    top: 34.33%;
-    bottom: 0%;
-}
 
 .signup-form-page input[type="email"]{
     width: 540px;
@@ -186,6 +178,16 @@ h1 {
     margin-bottom: 20px;
 }
 
+.signup-form-page p {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #ECECEC;
+}
+
 .signup-form-page select {
     margin: 10px;
     background: #C4C4C4;
@@ -195,9 +197,16 @@ h1 {
     width: 200px;
 }
 
+#keywordLabel input[type="text"] {
+    width: 540px;
+    height: 44px;
+}
+
 .signup-form-buttons {
     margin-left: 40%;
     margin-right: 25%;
+    position: absolute;
+    top: 110%;
 }
 
 
@@ -226,8 +235,11 @@ h1 {
 
 .team img {
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ECECEC;
+    margin-right: 20px;
+
 }
 
 .team p {
@@ -259,15 +271,16 @@ h1 {
     margin-top: 30px;
 }
 
+
 .form-columns {
-    display: flex;
-
-}
-
-.image-upload-buttons button {
-    background: rgba(38, 204, 215, 0.2);
-    border: 1px solid rgba(38, 204, 215, 0.5);
-    color: white;
+    columns: 3;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    align-items: center;
+    color: #ECECEC;
 }
 
 textarea {
@@ -289,3 +302,369 @@ textarea {
     height: 44px;
     width: 350px;
 } 
+
+.profile-img-and-links img {
+    width: 255px;
+    height: 255px;
+    border: 1px solid #ECECEC;
+    border-radius: 50%;
+
+}
+
+.social-links img{
+    height: 48px !important;
+    width: 48px !important;
+    border: none !important;
+    margin-left: -100px;
+    margin-top: 44px;
+}
+
+
+.ProfilePageUserArea h1 {
+    color: #26CCD7;
+    font-size: 48px;
+    margin-bottom: 90px;
+    margin-left: -95px;
+}
+
+
+.profile-about-and-roles-area {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #ECECEC;
+    height: 132px ;
+    width: 635px;
+}
+
+
+.profile-about-and-roles-area ul {
+    width: 186px;
+    height: 90px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+    color: #ECECEC;
+}
+
+.userURL {
+    height: 30px;
+    width: 255px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 30px;
+    color: #26CCD7;
+    margin-top: 32px;
+    margin-bottom: 48px;
+}
+
+.userURL a:hover {
+    color: #ab1d46;
+}
+
+.divider hr {
+    width: 980px;
+    border: 1px solid #ECECEC;
+    margin-left: -30px;
+}
+
+.image-upload-buttons button {
+    height: 44px;
+    width: 160px;
+    background: rgba(38, 204, 215, 0.2);
+    border: 1px solid #26CCD7;
+    border-radius: 8px;
+    color: #26CCD7;
+}
+
+.ImageContainer h1 {
+    color: #ECECEC;
+    font-size: 48px;
+}
+
+.ImageContainer {
+    margin-left: 96px;
+}
+
+.carousel-inner {
+    width: 730px;
+    height: 487.43px;
+    margin-top: 64px;
+    margin-bottom: 50px;
+}
+
+.profile-pg-container {
+    margin-left: 404px;
+    margin-right: 404px;
+    margin-top: 6%;
+}
+
+.image-placeholder {
+    background-color: #454545;
+    display: block;
+    height: 255px;
+    width: 255px;
+    margin: 5px;
+    width: 260px;
+    align-items: center;
+    border: 1px solid #26CCD7;
+    margin-left: 350px;
+}
+
+.image-placeholder > h4 {
+    align-self: center;
+    text-align: center;
+    width: 100%;
+    background-color: #454545;
+}
+
+.image-placeholder img {
+    background-color: #454545;
+    margin-top: 10px; 
+}
+
+.inbox-header {
+    width: 1110px;
+    border-bottom: 1px solid #26CCD7;
+    background: #121212;
+    padding: 20px;
+}
+
+/* .inbox-navbar-categories {
+} */
+
+
+
+.inbox-navbar-categories button {
+    width: 255px;
+    height: 44px;
+    background: #454545;
+    border: 2px solid #353535;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color:#ECECEC;
+}
+
+/* .inbox-page {
+    background: #121212;
+    width: 1110px;
+    height: 850px;  
+} */
+
+
+.teamMember-name {
+    padding-left: 20px;
+}
+
+.userAbout-text {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #ECECEC;
+    text-align: left;
+    margin-left: 30px;
+    display: grid;
+}
+
+.userAbout-roles {
+    margin-left: 30px;
+    color: #ECECEC;
+    margin-top: 18px;
+    margin-bottom: 20px;
+}
+
+.ProfilePageProjects h2 {
+    margin-top: 30px;
+    margin-right: 500px;
+}
+
+.myProjects {
+    display: flex;
+}
+
+.myProjects button {
+    height: 44px;
+    width: 160px;
+    background: rgba(38, 204, 215, 0.2);
+    border: 1px solid #26CCD7;
+    border-radius: 8px;
+    color: #26CCD7;
+    margin-top: 30px;
+}
+
+.gallery-header button {
+    height: 44px;
+    width: 160px;
+    background: rgba(38, 204, 215, 0.2);
+    border: 1px solid #26CCD7;
+    border-radius: 8px;
+    color: #26CCD7;
+    margin-left: 523px;
+}
+
+.gallery-header {
+    display: flex;
+    margin-top: 50px;
+}
+
+.find-collab-container {
+    margin-left: 308px;
+    margin-right: 310px;
+}
+
+
+.find-collab-container h1 {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-size: 48px;
+    line-height: 56px;
+    display: flex;
+    align-items: center;
+    color: #ECECEC;
+}
+
+.filter-column {
+    width: 350px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    color: #ECECEC;
+}
+
+.filter-column button {
+    background-color: #202020;
+    background: rgba(38, 204, 215, 0.2);
+    border: 1px solid #26CCD7;
+    border-radius: 8px;
+    color: #26CCD7;
+}
+
+.filter-column select {
+    background: #ECECEC;
+    border: 1px solid #ECECEC;
+    border-radius: 8px;
+    margin: 20px;
+    width: 224px;
+    height: 44px;
+}
+
+.filter-column input[type="text"] {
+    width: 224px;
+    height: 44px;
+    background: #C4C4C4;
+    border: 1px solid #ECECEC;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+
+.filter-column h3 {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    color: #ECECEC;
+    width: 336px;
+    height: 40px;
+    background-color: #121212;
+    border-top: 1px solid #26CCD7;
+    margin-top: 50px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.collab-column-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.collab-column-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.collab-header h1 {
+    margin-left: 308px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    color: #ECECEC;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* .CollaboratorItem {
+    color: #ECECEC;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+
+} */
+
+.collab-buttons button{
+    width: 160px;
+    height: 44px;
+    background: rgba(38, 204, 215, 0.2);
+    border: 1px solid #26CCD7;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.collab-img img {
+    border: 1px solid #ECECEC;
+    border-radius: 50%;
+}
+
+.collab-name h5 {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    color: #26CCD7;
+}
+
+.collaborators {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.collab-col-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.collab-col-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.collab-col-3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.inbox-page {
+    margin-left: 308px;
+    margin-top: 60px;
+}
+
+.create-project-form  h2{
+    margin-left:370px;
+    margin-bottom: 64px;
+}
+

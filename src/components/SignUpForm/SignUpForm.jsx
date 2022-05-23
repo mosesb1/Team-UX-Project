@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 import { statesList, artistRoles } from '../../utilities/list-items/list-items'
 import { useNavigate } from 'react-router-dom'
 import ImageUploads from '../ImageUploads/ImageUploads'
+import '../../pages/App/App.css'
+import './SignUpForm.css'
 
 export default function SignUpForm({ user, setUser }) {
     const [ image, setImage ] = useState('')
@@ -163,9 +165,11 @@ export default function SignUpForm({ user, setUser }) {
 
                         <br/>
 
-                        <label>Add Keyword Tags (optional)
-                            <input type='text' name='keywordTags' value={formData.keywordTags} onChange={handleChange} />
-                            Skills - Specialties - Software - Styles</label>
+                        <div>
+                            <label id="keywordLabel">Add Keyword Tags (optional)
+                                <input type='text' name='keywordTags' value={formData.keywordTags} onChange={handleChange} />
+                                Skills - Specialties - Software - Styles</label>
+                        </div>
                         <br/>
                     </div>
                     :
@@ -175,15 +179,11 @@ export default function SignUpForm({ user, setUser }) {
                     page === 3 ?
                     <div className='signup-form-page'>
                         <h2>Almost done! Complete your Profile</h2>
-
-                        <div>
-                            <img src="/images/ProfilePg/uploadpic.png" height="104.17px" width="104.17px"/>
-                        </div>
                     
                         <div className='profile-image-upload'>
                             {/* <button onClick={(e) => {profileImageUpload()}}><ion-icon name="person-circle-outline"></ion-icon></button> */}
                             {
-                                image ? <img src={image} /> : ""
+                                image ? <img src={image} /> : <img src="/images/ProfilePg/uploadpic.png" height="104.17px" width="104.17px"/>
                             }
                             <ImageUploads image={image} setImage={setImage} /> 
                             <br/>

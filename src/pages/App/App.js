@@ -6,9 +6,12 @@ import Footer from '../../components/Footer/Footer';
 import AuthPage from '../AuthPage/AuthPage';
 import { getUser } from '../../utilities/api/users/users-service';
 import ProfilePage from '../ProfilePage/ProfilePage';
-import CreateProject from '../CreateProject/CreatProject';
+import CreateProject from '../CreateProject/CreateProject';
 import About from '../About/About';
-
+import ProjectPage from '../ProjectPage/ProjectPage';
+import Inbox from '../Inbox/Inbox';
+import CollaboratorSearchPage from '../CollaboratorSearchPage/CollaboratorSearchPage';
+import ProjectSearchPage from '../ProjectSearchPage/ProjectSearchPage';
 import './App.css';
 export default function App() {
   const [ user, setUser ] = useState(null)
@@ -34,6 +37,14 @@ export default function App() {
         <Route path='/create-project' element={<CreateProject user={user} setUser={setUser} />}/>
 
         <Route path='/about' element={<About />}/>
+          
+        <Route path='/projects/:id' element={<ProjectPage user={user} setUser={setUser}/>} />
+
+        <Route path='/collaborators' element={<CollaboratorSearchPage user={user} setUser={setUser}/>} />
+
+        <Route path='/find-projects' element={<ProjectSearchPage user={user} setUser={setUser}/>}/>
+
+        <Route path='/inbox' element={<Inbox user={user} setUser={setUser} />} />
 
      </Routes>
 

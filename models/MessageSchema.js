@@ -11,9 +11,32 @@ const messageSchema = new Schema({
         ref: 'User',
         required: true
     },
+    senderName: {
+        type: String,
+        required: true
+    },
+    receiverName: {
+        type: String,
+        required: true
+    },
+    project: {
+        type: Schema.Types.ObjectId,
+        ref: 'Project'
+    },
     message: {
         type: String,
         required: true
+    },
+    role: {
+        type: String
+    },
+    isRead: {
+        type: Boolean,
+        default: false
+    },
+    isInvite: {
+        type: Boolean,
+        default: false
     },
     thread: {
         type: Schema.Types.ObjectId,
@@ -21,6 +44,8 @@ const messageSchema = new Schema({
         required: true
     }
    
+}, {
+    timestamps: true
 })
 
 module.exports = messageSchema;

@@ -21,3 +21,6 @@ export async function getProject(projectId){
     return sendRequest(`${BASE_URL}/${projectId}`, 'GET')
 }
 
+export function getUserProjects(userId){
+    return sendRequest(`${BASE_URL}/user/${userId}`)
+}

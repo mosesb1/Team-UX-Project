@@ -1,4 +1,77 @@
 .create-project-form {
     display: flex;
     flex-direction: column;
+    margin-left: 404px;
+    margin-top: 6%;
+}
+
+
+.create-project-form input[type="text"] {
+    width: 540px;
+    height: 44px;
+    background: #ECECEC;
+    border: 2px solid #26CCD7;
+    border-radius: 8px;
+    margin-left: 125px;
+}
+
+/* .create-project-form label {
+    margin-left: 125px;
+} */
+
+.create-project-form select {
+    width: 200px;
+    height: 44px;
+    background: #ECECEC;
+    border: 1px solid #ECECEC;
+    border-radius: 8px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin-left: 240px;
+}
+
+.create-project-form button {
+    width: 160px;
+    height: 44px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: rgba(38, 204, 215, 0.5);
+    margin: 20px;
+    border-radius: 8pt;
+}
+
+
+.file-input input[type="file"] {
+    background: #C4C4C4;
+    border: 1px solid #ECECEC;
+    border-radius: 8pt;
+    height: 44px;
+}
+
+.date-range-select input[type="date"] {
+    width: 160px;
+    height: 44px;
+    background: #C4C4C4;
+    border: 1px solid #ECECEC;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 5px;
+}
+
+.create-project-form textarea {
+    width: 731px;
+    height: 166px;
+    margin-left: 124px;
+}
+
+#project-other-input input[type="text"]{
+    margin-left: 130px;
 }

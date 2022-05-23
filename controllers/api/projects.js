@@ -10,6 +10,18 @@ const getProject = (req,res)=>{
         }
       })
 }
+
+// get all projects from user
+
+const getUserProjects = (req,res) => {
+  Project.find({$or: [{organizer: req.params.userId},{"collaborators.userId": req.params.userId}]},(err, foundProjects) => {
+    if(err){
+      res.status(400).json(err);
+    } else {
+      res.status(200).json(foundProjects)
+    }
+  })
+}
 //set project
 
 const setProject = async (req,res)=>{
@@ -59,6 +71,7 @@ const showProject= (req,res)=>{
 
 module.exports = {
     getProject,
+    getUserProjects,
     setProject,
     updateProject,
     deleteProject,

@@ -1,8 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const { getProject, setProject, deleteProject, updateProject, showProject } = require('../../controllers/api/projects')
+const { getProject, getUserProjects,setProject, deleteProject, updateProject, showProject } = require('../../controllers/api/projects')
 
 router.get("/", getProject) 
+router.get('/user/:userId', getUserProjects)
 //
 router.post('/', setProject)
 //  Update

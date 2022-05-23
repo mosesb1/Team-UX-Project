@@ -12,26 +12,42 @@ export default function About() {
             <div className="team"> 
                 
                 <div id="columnOneTeam">
-                    <div className='teamMember'>
-                        <img src = './images/About/mindy.png' alt="Mindy"/>
-                        <h2> Mindy Miller </h2> 
-                        <p> Project Manager </p>
-                        <p> Front-End CSS </p>
-                        <a href="https://github.com/mmillerks"> Github : mmillerks</a>
+                    <div className='teamMember container'>
+                        <div className='teamMember-name'>
+                            <img src = './images/About/mindy.png' alt="Mindy"/>
+                        </div>
+
+                        <div className='teammember-text'>
+                            <h2> Mindy Miller </h2> 
+                            <p> Project Manager </p>
+                            <p> Front-End CSS </p>
+                            <a href="https://github.com/mmillerks"> Github : mmillerks</a>
+                        </div>
                     </div>
                     
-                    <div className='teamMember'>
-                        <img src = './images/About/moses.jpeg' alt="Moses"/>
-                        <h2> Moses Burkhart </h2>
-                        <p> GIT Czar </p>
-                        <a href="https://github.com/mosesb1"> Github : mosesb1 </a>
+                    <div className='teamMember container'>
+                        <div className='teamMember-name'>
+                            <img src = './images/About/moses.jpeg' alt="Moses"/>
+                        </div>
+                        
+                        <div className='teammember-text'>
+                            <h2> Moses Burkhart </h2>
+                            <p> GIT Czar </p>
+                            <a href="https://github.com/mosesb1"> Github : mosesb1 </a>
+                        </div>
                     </div>
                     
-                    <div className='teamMember'>
-                        {/* <img src/> */}
-                        <h2> Orlando Valadez </h2>
-                        <p> Front-End </p>
-                        <a href="https://github.com/Orlandouchiha425"> Github: Orlandouchiha425</a> 
+                    <div className='teamMember container'>
+                        <div className='teamMember-name'>
+                            <img src = './images/About/orlando.jpg' alt="Orlando"/>
+                        </div>
+                        
+                        <div className='teammember-text'>
+                            <h2> Orlando Valadez </h2>
+                            <p> Front-End </p>
+                            <a href="https://github.com/Orlandouchiha425"> Github: Orlandouchiha425</a> 
+                        </div>
+                        
                     </div>
                 </div>
 

@@ -1,35 +1,65 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './ProfilePageUserArea.css'
 
-export default function ProfilePageUserArea({ user }) {
+export default function ProfilePageUserArea({ user, profileUser }) {
 
     return (
         <div className='ProfilePageUserArea'>
-            
-            <div className='profile-img-and-links'>
-                <img src={user.profileImageUrl} alt='profileImg'/>
-                <div className='social-links'>
-                    <a href={user.instagramUrl} target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
-                    <a href={user.pinterestUrl} target="_blank"><ion-icon name="logo-pinterest"></ion-icon></a>
-                    <a href={user.tumblrUrl} target="_blank"><ion-icon name="logo-tumblr"></ion-icon></a>
+
+                <div>
+                    <h1> {profileUser.firstName} {profileUser.lastName}</h1> 
                 </div>
-                <a href={user.websiteUrl} target="_blank">{user.websiteUrl}</a>
+            
+                <div className='profile-img-and-links container'>
+                    <div>
+                        <img src={profileUser.profileImageUrl} alt='profileImg'/>
+
+                        <div className="social-links">
+                            <a href={profileUser.instagramUrl} target="_blank"><img src= "/images/ProfilePg/instagram-logo.png"/> </a>
+                            <a href={profileUser.pinterestUrl} target="_blank"><img src= "/images/ProfilePg/pinterest-logo.png"/> </a>
+                            <a href={profileUser.tumblrUrl} target="_blank"><img src= "/images/ProfilePg/tumblr-logo.png"/> </a>
+                        </div>
+
+                        <div className='userURL'>
+                            <a href={profileUser.websiteUrl} target="_blank">{profileUser.websiteUrl}</a>
+                        </div>
+                
+                    </div>
+
+                    <div className='profile-about-and-roles-area'>
+                    
+                    <div className='userAbout-text'>{profileUser.aboutMe}</div>
+                    
+                    <div className='userAbout-roles'>
+                        <ul>
+                            {
+                                profileUser.roles.map((role, idx) => {
+                                    return (
+                                        <li key={idx}>{role}</li>
+                                    )
+                                })
+                            }
+                        </ul>
+                    </div>
+
+                    {/* <div className='"userAbout-edit'>  
+                        <Link to='/'>Edit My Profile</Link>
+                    </div> */}
+
+                </div>
+
+
             </div>
 
-            <div className='profile-about-and-roles-area'>
-                <div>{user.aboutMe}</div>
-                <ul>
-                    {
-                        user.roles.map((role, idx) => {
-                            return (
-                                <li>{role}</li>
-                            )
-                        })
-                    }
-                </ul>
+            
+
+
+            <div className='divider'>
+                <hr/>
             </div>
 
-            <div className='profile-edit-link'><Link to='/'>Edit My Profile</Link></div>
         </div>
+
+
     )
 }

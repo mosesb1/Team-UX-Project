@@ -100,20 +100,24 @@ export default function CreateProjectForm({ user, setUser }) {
             <input type="text" name="projectName" value={formData.projectName} onChange={handleChange} required /></label>
             
             <label>Location*
-                <select name="country" value={formData.country} onChange={handleChange} required >
-                    <option value="United States" >United States</option>   
-                
-                </select>
-                <select name="usState" value={formData.usState} onChange={handleChange} required >
-                    {statesList.map((usState, index) => (
-                        <option value={usState.value} key={index} >{usState.label}</option>
-                    ))}
-                </select>
+                <div>
+                    <select name="country" value={formData.country} onChange={handleChange} required >
+                        <option value="United States" >United States</option>   
+                    </select>
+                </div>
+
+                <div>
+                    <select name="usState" value={formData.usState} onChange={handleChange} required >
+                        {statesList.map((usState, index) => (
+                            <option value={usState.value} key={index} >{usState.label}</option>
+                        ))}
+                    </select>
+                </div>
 
                 <label> And/Or  <input type="checkbox" name="isRemote" value={formData.isRemote} onChange={(e) => setFormData({...formData, isRemote: !formData.isRemote})}/>Remote</label>
             </label>
             
-            <label>Project Description*
+            <label>Project Description* <br/>
             <textarea name="projectDescription" value={formData.projectDescription} onChange={handleChange} required /></label>
             <br/>
 
@@ -128,9 +132,11 @@ export default function CreateProjectForm({ user, setUser }) {
             }
             <br/>
 
-            <label>Other: 
-            <input type='text' name='lookingForTags' value={formData.lookingForTags} onChange={handleChange} /></label>
-            <br/>
+            <div id="project-other-input">
+                <label>Other: 
+                <input type='text' name='lookingForTags' value={formData.lookingForTags} onChange={handleChange} /></label>
+                <br/>
+            </div>
 
             {
                 formData.isRange ?
@@ -141,14 +147,19 @@ export default function CreateProjectForm({ user, setUser }) {
                 </div>
                 :
                 <div className='date-multi-select'>
-                    <p>Enteer Specific Date(s):</p>
+                    <p>Enter Specific Date(s):</p>
                     <label>Date: <input type="date" name="datesMultiple" onChange={(e) => {addDate(e)}}/></label>
                 </div>
             }
 
-            <button onClick={(e) => {setFormData({ ...formData, isRange: !formData.isRange})}}>{ formData.isRange? 'Or slect dates' : 'Or select range' }</button>
+            <button onClick={(e) => {setFormData({ ...formData, isRange: !formData.isRange})}}>{ formData.isRange? 'Or select dates' : 'Or select range' }</button>
 
             <p>Choose a cover image (optional): </p>
+
+            <div class="image-placeholder">
+                <img src="/images/CreateProject/UploadArrow.png" height="49.5" width="40.91"></img>
+                <h4>Upload Image</h4>
+            </div>
 
             <ImageUploads image={image} setImage={setImage}/>
 
