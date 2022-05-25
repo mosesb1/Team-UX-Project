@@ -27,19 +27,21 @@ export default function ProjectLookingForItem({item, user, project}){
     }
     return (
         <div>
-            <h4>{item}</h4>
-            <button onClick={determineDisplay() ? invite : interested}>{determineDisplay() ?
-                <Link to={'/inbox'} state={{
-                    category: inboxCategory,
-                    projectId: project._id,
-                    projectName: project.projectName,
-                    senderId: user._id,
-                    senderName: `${user.firstName} ${user.lastName}`,
-                    theRole: item,
-                    isInvite: true
-                }}>Invite</Link>:
-                "I'm interested"}
-            </button>
+            <div className='lookingFor-card'>
+                <h4>{item}</h4>
+                <button onClick={determineDisplay() ? invite : interested}>{determineDisplay() ?
+                    <Link to={'/inbox'} state={{
+                        category: inboxCategory,
+                        projectId: project._id,
+                        projectName: project.projectName,
+                        senderId: user._id,
+                        senderName: `${user.firstName} ${user.lastName}`,
+                        theRole: item,
+                        isInvite: true
+                    }}>Invite</Link>:
+                    "I'm Interested"}
+                </button>
+            </div>
         </div>
     )
 }

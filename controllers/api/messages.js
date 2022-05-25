@@ -32,6 +32,16 @@ const getMessagesByUser = (req,res)=>{
       }
     })
 }
+
+const getUnreadMessages = (req,res) => {
+  Message.find({receiver: req.params.userId, isRead: "false"}, (err, foundMessages) => {
+    if(err){
+      res.status(400).json(err);
+    } else {
+      res.status(200).json({count: foundMessages.length});
+    }
+  })
+}
 //set message
 
 const setMessage = (req,res) => {
@@ -96,6 +106,7 @@ module.exports = {
     getSendMessage,
     getReceiveMessage,
     getMessagesByUser,
+    getUnreadMessages,
     setMessage,
     updateMessage,
     deleteMessage,

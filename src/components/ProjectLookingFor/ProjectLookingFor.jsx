@@ -20,7 +20,7 @@ export default function ProjectLookingFor({project, user}){
 
     const loaded = () => {
         return (
-            <div>
+            <div className='lookingFor-header'>
                 <hr/>
                 <h3>Looking For</h3>
                 {roleDisplay}

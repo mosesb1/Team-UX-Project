@@ -27,7 +27,7 @@ export default function InboxMessages({ user,
         } else if (pageToShow === 'InboxTrash') {
             return <InboxTrash user={ user } setUser={ setUser } />
         } else if (pageToShow === 'InboxUnread') {
-            return <InboxUnread  user={ user } setUser={ setUser } />
+            return <InboxUnread  user={ user } setUser={ setUser } allMessages={allMessages}/>
         } else if (pageToShow === 'InboxComposeMessage') {
             return <InboxComposeMessage  user={ user } setUser={ setUser } params={params}
             receiverId={receiverId} setReceiverId={setReceiverId} theMessage={theMessage} setTheMessage={setTheMessage}

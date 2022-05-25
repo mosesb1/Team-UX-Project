@@ -93,24 +93,27 @@ export default function SearchBar({user, filter, setFilter, type, refreshFilter,
               </div>
 
               <label> State
-                <select name="usState" value={filter.usState} onChange={handleChange} required >
+                <select className="search-select" name="usState" value={filter.usState} onChange={handleChange} required >
                     {statesList.map((usState, index) => (
                       <option value={usState.value} key={index} >{usState.label}</option>
                     ))}   
                 </select>
               </label>
+
               <label> Zip code
                   <input type="text" name="zipCode" value={filter.zipCode} onChange={handleChange} required />
               </label>
+
+              <div id="lookingFor">
+                <h3>I'm looking for </h3>
+              </div>
+
             </div>
 
 
             <div className='form-columns'>
-              <div>
-                <h3>I'm looking for </h3>
-              </div>
-
-              <div>
+              
+              <div className='filterRoles'>
                 {
                   artistRoles.map((theRole, index) => {
                     return(

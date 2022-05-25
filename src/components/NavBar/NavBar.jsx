@@ -3,6 +3,8 @@ import Modal from 'react-modal'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import './NavBar.css'
+import '../../pages/App/App.css'
+import { getUnreadMessages } from '../../utilities/api/messages/messages-api'
 
 
 export default function NavBar({ user, setUser }){
@@ -13,6 +15,7 @@ export default function NavBar({ user, setUser }){
         password: ''
     })
     const [ render, setRender ] = useState(false)
+    const [unread, setUnread] = useState(null);
     let navigate = useNavigate()
 
     function openModal() {
@@ -27,6 +30,8 @@ export default function NavBar({ user, setUser }){
     function closeModal() {
         setIsOpen(false)
     }
+
+
 
     const handleChange = (event) => {
         setFormData({...formData, [event.target.name]: event.target.value})
@@ -49,11 +54,27 @@ export default function NavBar({ user, setUser }){
         setUser(null)
     }
 
+    const getUnread = async () => {
+        try {
+            const unreadCount = await getUnreadMessages(user._id);
+            setUnread(unreadCount.count);
+        } catch (err){
+            console.error(err);
+        }
+    }
+
+    useEffect(() => {
+        if(!user) return;
+        getUnread();
+    },[])
+
     const loginNav = () => {
         return (
             <div className='navBar' >   
                 <div id="navBar-logo">
-                    <Link to='/' ><img src='/images/Logo/project_logo.png' alt='ProjectConnect' height="300px"/></Link>
+                    <Link to='/' >
+                    <img src='/images/Logo/project_logo.png' alt='ProjectConnect' height="150px"/>
+                    </Link>
                 </div>
 
                 <div className='user-navbar-buttons'>
@@ -107,7 +128,7 @@ export default function NavBar({ user, setUser }){
                 </div>
 
                 <div className='user-navbar-right'> 
-                    <Link to ='/inbox'><ion-icon name='mail-outline'></ion-icon></Link>
+                    <Link to ='/inbox'><ion-icon color={unread ? "red" : ""} name='mail-outline'></ion-icon></Link>
                         <Link to ={`/profile/${user._id}`}>
                             <img className='profile-image-navbar' src={user.profileImageUrl} alt='profile-image' />
                     </Link>
@@ -116,5 +137,5 @@ export default function NavBar({ user, setUser }){
         )
     }
 
-    return user ? userNav() : loginNav()
+    return user && unread !== null ? userNav() : loginNav()
 }

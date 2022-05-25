@@ -64,18 +64,21 @@ export default function CollaboratorSearchPage({user, setUser}){
 
             <div className='collab-header'>
                 <h1>Find Collaborators</h1>
-             </div>
-
-
-            <div className='collab-column-1'>
-                <SearchBar type="collaborator" user={user} filter={filter} setFilter={setFilter} refreshFilter={refreshFilter} setRefreshFilter={setRefreshFilter}/>
             </div>
 
-            <div className='collab-column-2'>
-                <div>
-                    {collaborators}
+           
+                <div className='collab-columns'>
+                    <div className='collab-column-1'>
+                        <SearchBar type="collaborator" user={user} filter={filter} setFilter={setFilter} refreshFilter={refreshFilter} setRefreshFilter={setRefreshFilter}/>
+                    </div>
+
+                    <div className='collab-column-2'>
+                        <div>
+                            {collaborators}
+                        </div>
+                    </div>
                 </div>
-            </div>
+            
 
         </main>
         )

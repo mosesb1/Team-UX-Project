@@ -9,7 +9,6 @@ export default function ProfilePageProjects({ user, profileUser }) {
     const getProjects = async () => {
         try {
             const foundProjects = await getUserProjects(profileUser._id);
-            console.log(foundProjects)
             setProjects(foundProjects);
         } catch (err) {
             console.error(err);
@@ -56,13 +55,10 @@ export default function ProfilePageProjects({ user, profileUser }) {
                 <div className='myProjects '>
                     <h2>My Projects</h2>
                 </div>
-
-                <div className="divider">
-                    <hr/>
-                </div>
             </div>
         )
     }
 
-    return projects.length ? loaded() : loading()
+    return 
+        projects.length ? loaded() : loading()
 }

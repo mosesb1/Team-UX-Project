@@ -1,7 +1,39 @@
+*{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ECECEC;
+}
+
 .inbox-page{
     color: white;
+    display: flex;
+    background: #121212;
+    width: 1110px;
+    height: 850px;
+    margin-left: 450px;
 }
 
 button {
     color: white;
+}
+
+.inbox-navbar {
+    width: 20%;
+}
+
+.inbox-messages {
+    margin-top: 100px;
+    background: #121212;
+}
+
+/* .inbox-navbar-categories {
+ 
+} */
+
+.messages-to-show {
+    margin-left: 20px;
+    background: #121212;
+
 }

@@ -96,17 +96,28 @@ export default function CreateProjectForm({ user, setUser }) {
     return (
         <form onSubmit={handleSubmit} className='create-project-form'>
             <h2>Create Project</h2>
-            <label>Project Name:*
-            <input type="text" name="projectName" value={formData.projectName} onChange={handleChange} required /></label>
-            
-            <label>Location*
+            <div>
+                <div id="projectLabel">
+                    <label>Project Name:*</label>
+                </div>
+
                 <div>
+                    <input type="text" name="projectName" value={formData.projectName} onChange={handleChange} required />
+                </div>
+            
+            </div>
+
+            <div>
+            
+                <div id="location"><label>Location*</label></div>
+
+                <div id="countrySelect">
                     <select name="country" value={formData.country} onChange={handleChange} required >
                         <option value="United States" >United States</option>   
                     </select>
                 </div>
 
-                <div>
+                <div id="stateSelect">
                     <select name="usState" value={formData.usState} onChange={handleChange} required >
                         {statesList.map((usState, index) => (
                             <option value={usState.value} key={index} >{usState.label}</option>
@@ -114,54 +125,64 @@ export default function CreateProjectForm({ user, setUser }) {
                     </select>
                 </div>
 
-                <label> And/Or  <input type="checkbox" name="isRemote" value={formData.isRemote} onChange={(e) => setFormData({...formData, isRemote: !formData.isRemote})}/>Remote</label>
-            </label>
-            
-            <label>Project Description* <br/>
-            <textarea name="projectDescription" value={formData.projectDescription} onChange={handleChange} required /></label>
-            <br/>
+                <div id="remote">
+                    <label> And/Or  <input type="checkbox" name="isRemote" value={formData.isRemote} onChange={(e) => setFormData({...formData, isRemote: !formData.isRemote})}/>Remote</label>
+                </div>
 
-            {
-                artistRoles.map((theRole, index) => {
-                    return(
-                        <label key={index} >
-                            <input type="checkbox" name="lookingForItems" value={theRole.role} onChange={(e) => addRole(e, theRole.role)}/>
-                        {theRole.role}</label>
-                    )
-                })
-            }
-            <br/>
+                <div id="projectDescription">
+                    <label>Project Description* <br/></label>
+                </div>
+                
+                <div>
+                    <textarea name="projectDescription" value={formData.projectDescription} onChange={handleChange} required />
+                </div>
+
+            </div>
+
+            <div id="roles">
+                {
+                    artistRoles.map((theRole, index) => {
+                        return(
+                            <label key={index} >
+                                <input type="checkbox" name="lookingForItems" value={theRole.role} onChange={(e) => addRole(e, theRole.role)}/>
+                            {theRole.role}</label>
+                        )
+                    })
+                }
+            </div>
 
             <div id="project-other-input">
-                <label>Other: 
-                <input type='text' name='lookingForTags' value={formData.lookingForTags} onChange={handleChange} /></label>
+                <label>Other:</label>
+                <input type='text' name='lookingForTags' value={formData.lookingForTags} onChange={handleChange} />
                 <br/>
             </div>
 
-            {
-                formData.isRange ?
-                <div className='date-range-select'>
-                    <p>Date Range:</p>
-                    <label>Start: <input type="date" name="dateStartEnd" onChange={(e) => {addDate(e, true)}}/></label>
-                    <label>End: <input type="date" name="dateStartEnd" onChange={(e) => {addDate(e, false)}}/></label>
-                </div>
-                :
-                <div className='date-multi-select'>
-                    <p>Enter Specific Date(s):</p>
-                    <label>Date: <input type="date" name="datesMultiple" onChange={(e) => {addDate(e)}}/></label>
-                </div>
-            }
-
-            <button onClick={(e) => {setFormData({ ...formData, isRange: !formData.isRange})}}>{ formData.isRange? 'Or select dates' : 'Or select range' }</button>
-
-            <p>Choose a cover image (optional): </p>
-
-            <div class="image-placeholder">
-                <img src="/images/CreateProject/UploadArrow.png" height="49.5" width="40.91"></img>
-                <h4>Upload Image</h4>
+            <div>
+                {
+                    formData.isRange ?
+                    <div className='date-range-select'>
+                        <p><strong>Date Range: </strong></p>
+                        <label>Start: <input type="date" name="dateStartEnd" onChange={(e) => {addDate(e, true)}}/></label>
+                        <label>End: <input type="date" name="dateStartEnd" onChange={(e) => {addDate(e, false)}}/></label>
+                    </div>
+                    :
+                    <div className='date-multi-select'>
+                        <p>Enter Specific Date(s):</p>
+                        <label>Date: <input type="date" name="datesMultiple" onChange={(e) => {addDate(e)}}/></label>
+                    </div>
+                }
             </div>
 
-            <ImageUploads image={image} setImage={setImage}/>
+            {/* <button onClick={(e) => {setFormData({ ...formData, isRange: !formData.isRange})}}>{ formData.isRange? 'Or select dates' : 'Or select range' }</button> */}
+
+            <p>Choose a cover image (optional): </p>
+        
+            {/* <div class="image-placeholder">
+                <img src="/images/CreateProject/UploadArrow.png" height="49.5" width="40.91"></img>
+                <h4>Upload Image</h4>
+            </div> */}
+
+            <ImageUploads image={image} setImage={setImage} placeholder='/images/CreateProject/UploadArrow.png'/>
 
             <button type="submit">Finish</button>
 

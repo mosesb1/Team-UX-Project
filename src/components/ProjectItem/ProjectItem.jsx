@@ -20,49 +20,70 @@ export default function ProjectItem({name, image, id, location, description, rol
     },[])
     const loaded = () => {
         return (
-            <div>
-                <h5>{name}</h5>
-                <div>
-                    <img src={image} alt="Project Image" />
+            <div className='projectItem-container'>
+
+                <div className='projectItem-1'>
+                    
+                    <div> <h5>{name}</h5></div>
+
                     <div>
-                        <p>Location: {location}</p>
-                        <p>Description: </p>
-                        <p>{description}</p>
+                        <img src={image} alt="Project Image" height="127.5px" width="127.5px"/>
+                    </div>
+                    <div>
+                        <Link to={`/projects/${id}`}><button>View Project</button></Link>
                     </div>
                 </div>
-                <div>
-                    <Link to={`/projects/${id}`}><button>View Project</button></Link>
-                    <label>Looking For
+
+                <div className="projectItem-2">
+                    <div>
+                        <p><strong>Location:</strong> {location}</p>
+                        <p><strong>Description:</strong> </p>
+                        <p>{description}</p>
+                    </div>
+            
+
+
+            
+                
+                <div className='projectItem-section-1'>
+                    <p><strong>Looking for:</strong></p>
                         <ul>
                             {
                                 roles.map((role, idx) => {
                                     return (
                                         <li key={idx}>
-                                            {role}
+                                             {role}
                                         </li>
                                     )
-                                })
-                            }
+                                    })
+                            }        
                         </ul>
-                    </label>
-                    <label>Possible Dates
-                        <ul>
-                            {datesRange.length ? 
-                                <li key={0}>{datesRange[0]}-{datesRange[1]}</li>
-                            :
-                                datesMultiple.map((date, idx) => {
-                                    return (
-                                        <li key={idx}>
-                                            {date}
-                                        </li>
-                                    )
-                                })
-                            }
-                        </ul>
-                    </label>
-                    <label>Organizer
-                        <img src={projectUser.profileImageUrl} alt="Organizer Profile Image" />
-                    </label>
+        
+                      
+                            <label><strong>Possible Dates:</strong>
+                                <ul>
+                                    {datesRange.length ? 
+                                        <li key={0}>{datesRange[0]} - {datesRange[1]}</li>
+                                    :
+                                        datesMultiple.map((date, idx) => {
+                                            return (
+                                                <li key={idx}>
+                                                    {date}
+                                                </li>
+                                            )
+                                        })
+                                    }
+                                </ul>
+                            </label>
+                        
+
+                        <div id="organizer">
+                            <label><strong>Organizer:</strong>
+                                <img src={projectUser.profileImageUrl} alt="Organizer Profile Image" height="65px" width="65px"/>
+                            </label>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         )

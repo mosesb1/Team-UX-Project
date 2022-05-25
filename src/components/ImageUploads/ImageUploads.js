@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { uploadImage }  from '../../utilities/image-upload/image-upload'
 
-export default function ImageUploads({ image, setImage }) {
+export default function ImageUploads({ image, setImage, placeholder }) {
     
     const [ files, setFiles ] = useState([])
     const [ body, setBody ] = useState({ img: '' })
@@ -28,12 +28,12 @@ export default function ImageUploads({ image, setImage }) {
         
     return (
         <div>
-            {/* {
+            {
                 image ? 
-                <img src={image} alt='image'/>
-                :
                 doNothing
-            } */}
+                :
+                <img src={placeholder} alt='placeholder' height="104.17px" width="104.17px" />
+            }
             <form className='image-upload-form'>
                 <div className='image-upload-buttons'>
                     <label className='file-upload'>

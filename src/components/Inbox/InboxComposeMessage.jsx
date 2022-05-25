@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { getUsers } from '../../utilities/api/users/users-api'
+import { useNavigate } from 'react-router-dom'
 
 export default function InboxComposeMessage({ user, setUser, pageToShow,  setPageToShow,
     params, receiverId, setReceiverId, theMessage, setTheMessage, createNewThread, setReceiverName }) {
+    let navigate = useNavigate();
     const [ userList, setUserList ] = useState([])
 
     const getTheUsers = async () => {
@@ -23,6 +25,7 @@ export default function InboxComposeMessage({ user, setUser, pageToShow,  setPag
 
     const handleSubmit = (event) => {
         createNewThread()
+        navigate('/');
     }
 
     const roleToInvite = () => {
@@ -52,7 +55,7 @@ export default function InboxComposeMessage({ user, setUser, pageToShow,  setPag
                 {
                     userList.map((aUser, idx) => {
                         return (
-                            aUser.firstName === user.firstName ?
+                            aUser._id === user._id ?
                             doNothing()
                             :
                             <option value={`${aUser._id}/${aUser.firstName} ${aUser.lastName}`} key={idx}>

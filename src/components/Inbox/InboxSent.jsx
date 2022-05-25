@@ -2,6 +2,6 @@
 
 export default function InboxSent() {
     return (
-        <h1>InboxSent</h1>
+        <h1>Inbox: Sent</h1>
     )
 }

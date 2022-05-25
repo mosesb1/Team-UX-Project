@@ -3,6 +3,7 @@
     flex-direction: column;
     margin-left: 404px;
     margin-top: 6%;
+    margin-bottom: 110px;
 }
 
 
@@ -11,13 +12,16 @@
     height: 44px;
     background: #ECECEC;
     border: 2px solid #26CCD7;
+    color: black;
     border-radius: 8px;
-    margin-left: 125px;
+    margin-left: 250px;
+    display: flex;
 }
 
-/* .create-project-form label {
-    margin-left: 125px;
-} */
+.create-project-form textarea {
+    color: black;
+}
+
 
 .create-project-form select {
     width: 200px;
@@ -30,10 +34,16 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
-    display: flex;
     align-items: center;
     color: #000000;
-    margin-left: 240px;
+    margin-left: 250px;
+}
+/* 
+#countrySelect {
+} */
+
+#stateSelect {
+    margin-top: 20px;
 }
 
 .create-project-form button {
@@ -44,8 +54,19 @@
     font-weight: 400;
     font-size: 16px;
     background-color: rgba(38, 204, 215, 0.5);
-    margin: 20px;
+    margin-left: 450px;
+    margin-top: 20px;
     border-radius: 8pt;
+
+}
+.create-project-form p {
+    margin-left: 400px;
+    margin-top: 20px;
+}
+
+.create-project-form img {
+    margin-left: 470px;
+    margin-top: 20px;
 }
 
 
@@ -62,16 +83,66 @@
     background: #C4C4C4;
     border: 1px solid #ECECEC;
     border-radius: 8px;
-    margin: 20px;
+    margin: 10px;
     padding: 5px;
 }
+
+.date-range-select label {
+    margin-left: 190px;
+}
+
+.date-range-select p {
+    margin-left:190px;
+}
+
 
 .create-project-form textarea {
     width: 731px;
     height: 166px;
-    margin-left: 124px;
+    margin-left: 160px;
+    margin-bottom: 30px;
 }
 
 #project-other-input input[type="text"]{
-    margin-left: 130px;
+    margin-left: 250px;
+}
+
+#project-other-input label {
+    margin-left: 250px;
+    margin-top: 20px;
+}
+
+#projectLabel {
+    margin-left: 250px;
+    margin-bottom: 10px;
+}
+
+#location {
+    margin-left: 250px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#remote {
+    margin-left: 250px;
+    margin-top: 10px;
+}
+
+#projectDescription {
+    margin-left: 160px;
+    margin-top:30px;
+    margin-bottom: 10px;
+}
+
+#roles {
+    margin-right: 300px;
+    margin-left: 100px;
+}
+
+#roles label {
+    padding: 15px;
+}
+
+#dates {
+    margin-right: 300px;
 }

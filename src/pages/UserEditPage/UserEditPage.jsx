@@ -5,7 +5,7 @@ import { getUser } from "../../utilities/api/users/users-api";
 import ProfilePageUserArea  from '../../components/ProfilePageUserArea/ProfilePageUserArea'
 import ProfilePageProjects from '../../components/ProfilePageProjects/ProfilePageProjects'
 
-export default function ProfilePage({ user, setUser }){
+export default function UserEditPage({ user, setUser }){
     const [profileUser, setProfileUser] = useState(null)
     const params = useParams() 
     const id = params.id
@@ -26,32 +26,29 @@ export default function ProfilePage({ user, setUser }){
 
     const loaded = () => {
         return(
-            <div>
-                <div>
-                    <hr/>
+            <main className="profile-pg-container">
+
+                <ProfilePageUserArea edit={true} profileUser={profileUser} user={user} setUser={setUser}/>
+                
+                <ProfilePageProjects profileUser={profileUser} user={user} setUser={setUser}/>
+                
+                <div className="gallery-header">
+                    <h2>My Gallery</h2>
+                    <button>Edit Gallery</button>
                 </div>
 
-                <main className="profile-pg-container">
-
-                    <ProfilePageUserArea edit={false} profileUser={profileUser} user={user} setUser={setUser}/>
-                    
-                    <ProfilePageProjects profileUser={profileUser} user={user} setUser={setUser}/>
-                    
-                    <div className="gallery-header">
-                        <h2>My Gallery</h2>
-                        {user._id === profileUser._id && <button>Edit Gallery</button>}
-                    </div>
-
-                    <ProfileCarousel profileUser={profileUser} user={user} setUser={setUser}/>
+                <ProfileCarousel profileUser={profileUser} user={user} setUser={setUser}/>
                 
-                </main>
-        </div>
+
+        
+
+            </main>
         )
     }
 
     const loading = () => {
         return (
-            <main className='loading-screen'>
+            <main className='loading-screen container'>
                 <h2>loading</h2>
             </main>
             )

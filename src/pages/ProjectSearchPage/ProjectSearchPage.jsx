@@ -68,9 +68,27 @@ export default function ProjectSearchPage({user, setUser}){
 
     const loaded = () => {
         return (
-            <main>
-                <SearchBar type='project' user={user} filter={filter} setFilter={setFilter} refreshFilter={refreshFilter} setRefreshFilter={setRefreshFilter}/>
-                {projects}
+            <main className='findProject-container'>
+
+            <div>
+                <hr/>
+            </div>
+                
+                <div className='collab-header'>
+                    <h1>Find Projects</h1>
+                </div>
+                
+                <div className='findProject-columns'>
+
+                    <div className='findProject-column-1'>
+                        <SearchBar type='project' user={user} filter={filter} setFilter={setFilter} refreshFilter={refreshFilter} setRefreshFilter={setRefreshFilter}/>
+                    </div>
+                    
+                    <div className='findProject-column-2'>
+                        {projects}
+                    </div>
+
+                </div>
             </main>
         )
     }

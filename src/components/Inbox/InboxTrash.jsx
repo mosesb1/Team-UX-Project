@@ -2,6 +2,6 @@
 
 export default function InboxTrash() {
     return (
-        <h1>InboxTrash</h1>
+        <h1>Inbox: Trash</h1>
     )
 }

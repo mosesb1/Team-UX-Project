@@ -84,8 +84,12 @@ export default function SignUpForm({ user, setUser }) {
         }
     }
 
+    const doNothing = () => {
+        return;
+    }
+
     useEffect (() => {
-        setDisableSignUpBtn(formData.password !== formData.confirm)
+        setDisableSignUpBtn((formData.password !== formData.confirm) && formData.password.length >=6)
     },[formData])
 
     useEffect(() => {
@@ -121,17 +125,21 @@ export default function SignUpForm({ user, setUser }) {
                         
                         <label>Email*
                         <input type="email" name="email" value={formData.email} onChange={handleChange} required /></label>
-                        <label>Password*
+                        <label>Password (Minimum 6 Characters)*
                         <input type="password" name="password" value={formData.password} onChange={handleChange} required /></label>
                         <label>Confirm Password*
                         <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required /></label>
                         <br/>
 
                         <label>Location*
+
                         <select name="country" value={formData.country} onChange={handleChange} required >
                             <option value="United States" >United States</option>   
                         </select>
+
                         <select name="usState" value={formData.usState} onChange={handleChange} required >
+                    
+
                             {statesList.map((usState, index) => (
                                 <option value={usState.value} key={index} >{usState.label}</option>
                             ))}   
@@ -177,31 +185,38 @@ export default function SignUpForm({ user, setUser }) {
                     
                     {
                     page === 3 ?
-                    <div className='signup-form-page'>
-                        <h2>Almost done! Complete your Profile</h2>
+                    <div className='pg-three'>
+                        <div id="almostDone">
+                            <h2>Almost done!</h2>
+                        </div>
+
+                        <div id="completeProfile">
+                            <h2>Complete your profile.</h2>
+                        </div>
                     
                         <div className='profile-image-upload'>
+                            <p><strong>Add a Profile Image</strong></p>
                             {/* <button onClick={(e) => {profileImageUpload()}}><ion-icon name="person-circle-outline"></ion-icon></button> */}
                             {
-                                image ? <img src={image} /> : <img src="/images/ProfilePg/uploadpic.png" height="104.17px" width="104.17px"/>
+                                image ? <img src={image} /> : doNothing
                             }
-                            <ImageUploads image={image} setImage={setImage} /> 
+                            <ImageUploads image={image} setImage={setImage} placeholder='/images/ProfilePg/uploadpic.png' /> 
                             <br/>
-                            <p>Add a Profile image</p>
+                            
                         </div>
 
                         <label>About me:
-                        <textarea name="aboutMe" value={formData.aboutMe} onChange={handleChange} required /></label>
+                        <textarea id="aboutMe"name="aboutMe" value={formData.aboutMe} onChange={handleChange} required /></label>
                         <br/>
 
                         <div className='website-links'>
-                            <label>Add your website URL (optional)
+                            <label id="website">Add your website URL (optional)
                             <input type="url" name="websiteUrl" value={formData.websiteUrl} onChange={handleChange} /></label>
-                            <label>Instagram (optional)
+                            <label id="website">Instagram (optional)
                             <input type="url" name="instagramUrl" value={formData.instagramUrl} onChange={handleChange} /></label>
-                            <label>Pinterest (optional)
+                            <label id="website">Pinterest (optional)
                             <input type="url" name="pinterestUrl" value={formData.pinterestUrl} onChange={handleChange} /></label>
-                            <label>Tumblr (optional)
+                            <label id="website">Tumblr (optional)
                             <input type="url" name="tumblrUrl" value={formData.tumblrUrl} onChange={handleChange} /></label>
                         </div>
                         <button type="submit" disabled={disableSignUpBtn}>Save</button>

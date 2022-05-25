@@ -1,0 +1,30 @@
+button {
+    height: 44px;
+    width: 190px;
+    background: rgba(38, 204, 215, 0.2);
+    border: 1px solid #26CCD7;
+    border-radius: 8px;
+    color: #1f8b92;
+}
+
+.from-text {
+    background:#179ba5;
+}
+
+.message-text {
+    font-size: x-large;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    margin-bottom: 20px;
+}
+
+.back-btn:hover {
+    cursor: pointer;
+}
+
+.message-link:hover {
+    cursor: pointer;
+    color: #179ba5;
+}

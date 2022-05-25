@@ -12,6 +12,7 @@ import ProjectPage from '../ProjectPage/ProjectPage';
 import Inbox from '../Inbox/Inbox';
 import CollaboratorSearchPage from '../CollaboratorSearchPage/CollaboratorSearchPage';
 import ProjectSearchPage from '../ProjectSearchPage/ProjectSearchPage';
+import UserEditPage from '../UserEditPage/UserEditPage';
 import './App.css';
 export default function App() {
   const [ user, setUser ] = useState(null)
@@ -31,6 +32,8 @@ export default function App() {
         <Route path='/signup' element={<AuthPage user={user} setUser={setUser} />}/>
     
         <Route path='/' element={<HomePage user={user} setUser={setUser} />} />
+
+        <Route path='/profile/edit/:id' element={<UserEditPage user={user} setUser={setUser}/>}/>
        
         <Route path="/profile/:id" element={<ProfilePage user={user} setUser={setUser} />}/>
     

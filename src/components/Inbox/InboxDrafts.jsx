@@ -2,6 +2,6 @@
 
 export default function InboxDrafts() {
     return (
-        <h1>InboxDrafts</h1>
+        <h1>Inbox: Drafts</h1>
     )
 }

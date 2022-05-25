@@ -23,7 +23,6 @@ export default function ProjectCollaborators({project, user}){
                 <hr/>
                 <h3>Collaborators</h3>
                 {collaborators}
-                <hr/>
             </div>
         )
     }

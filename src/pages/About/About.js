@@ -12,7 +12,7 @@ export default function About() {
             <div className="team"> 
                 
                 <div id="columnOneTeam">
-                    <div className='teamMember container'>
+                    <div className='teamMember-container'>
                         <div className='teamMember-name'>
                             <img src = './images/About/mindy.png' alt="Mindy"/>
                         </div>
@@ -25,7 +25,7 @@ export default function About() {
                         </div>
                     </div>
                     
-                    <div className='teamMember container'>
+                    <div className='teamMember-container'>
                         <div className='teamMember-name'>
                             <img src = './images/About/moses.jpeg' alt="Moses"/>
                         </div>
@@ -37,7 +37,7 @@ export default function About() {
                         </div>
                     </div>
                     
-                    <div className='teamMember container'>
+                    <div className='teamMember-container'>
                         <div className='teamMember-name'>
                             <img src = './images/About/orlando.jpg' alt="Orlando"/>
                         </div>
@@ -94,6 +94,7 @@ export default function About() {
                         <img src="./images/About/kajsa.jpeg" alt="Kajsa"/>
                         <h2> Kajsa Brown </h2>
                         <p> UX Designer </p> 
+                        <a href="https://www.kajsabrown.com/"> Kajsa's Website</a>
                     </div>
                 </div>
 
@@ -103,6 +104,7 @@ export default function About() {
                         <img src="./images/About/austin.jpeg" alt="Austin"/>
                         <h2> Austin O'Brien </h2> 
                         <p> UX Designer </p>
+                        <a href="https://www.obrienmakes.com/"> Austin's Website </a>
                     </div>
                     
                     <div className='teamMember'>

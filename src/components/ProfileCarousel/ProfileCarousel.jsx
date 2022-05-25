@@ -6,7 +6,7 @@ import { updateUser } from '../../utilities/api/users/users-api'
 import { useState, useEffect } from "react"
 
 
-export default function ProfileCarousel({ user, setUser }){
+export default function ProfileCarousel({ user, setUser, profileUser }){
 const [image, setImage] = useState('')
 const [carousel, setCarousel] = useState([''])
 const [counter, setCounter ] = useState(0)
@@ -16,9 +16,12 @@ const [formData, setFormData] = useState({
 const [ newUserData, SetNewUserData ] = useState(user)
 
 const updateUserOnMongoDb = async () => {
+  const payload = user
+  payload.profileCarousel = carousel
+  // console.log(payload)
   const response = await updateUser(newUserData)
   console.log(response)
-  setUser(newUserData)
+  // setUser(newUserData)
 }
 
 useEffect(() => {
@@ -30,8 +33,13 @@ useEffect(() => {
       setCounter(counter + 1)
       setCarousel(arr)
       SetNewUserData({ ...newUserData, profileCarousel: carousel})
+      updateUserOnMongoDb()
   }
 }, [image])
+
+useEffect(() => {
+  setCarousel(user.profileCarousel)
+},[])
   
   return(
 
@@ -82,10 +90,10 @@ useEffect(() => {
 
       </div>
       
-      <ImageUploads image={image} setImage={setImage}/>
+      {user._id === profileUser._id && <ImageUploads image={image} setImage={setImage}/>}
 
     </div>
     :
-    <ImageUploads image={image} setImage={setImage}/>
+    user._id === profileUser._id ? <ImageUploads image={image} setImage={setImage}/> : ''
   )
 }

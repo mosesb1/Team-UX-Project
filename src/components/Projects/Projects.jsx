@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import ProfileCarousel from "../../components/ProfileCarousel/ProfileCarousel"
 
+
 export default function Projects({user,setUser}){
     const [project, setProject ] = useState({})
     const params = useParams()
@@ -37,36 +38,58 @@ getOneProject()
 
     const loaded = () =>{ 
         return (
-            <main>
-                <div>
+            <main className="project-container">
+                <div className="projectPage-container">
                     <div>
-                    <h1>{project.projectName}</h1>
-                  </div>  
-                    
-                    <div className="d-flex justify-content-center">
-                    <h3>organizer: <br/>
-                         <img src={user.profileImageUrl} alt='profileImg'/></h3>
-                    </div>
+                        <h1>{project.projectName}</h1>
+                        <img src={project.imageUrl} alt="Project Image" height="255px" width="255px"/> 
+                        
+                        <div className="projectPage-column-1">
+                            <button>Group Message</button>
+                        </div>
+                    </div> 
 
+                    <div>
+                        <div className="projectPage-column-2">
+                            <p><strong>Location:</strong></p>
+                            <p><strong>Possible Dates:</strong></p>
+                            <ul>
+                                <li>{project.dateStartEnd} </li>
+                            </ul>
 
+                            <p><strong>Description:</strong></p>
+                            <p>{project.projectDescription}</p>
+                        </div>
 
-                    <ul>
-                        <li>{project.dateStartEnd} </li>
-                    </ul>
-                
-                    <p>{project.projectDescription}</p>
+                        <div className="projectPage-column-3">
+                            <h3><strong>Organizer:</strong><br/>
+                            <img src={user.profileImageUrl} alt='profileImg' height="80px" width="80px"/></h3>
+                        </div>
+                     </div>
                 </div>
 
+                <div className="projectPage-container-2">
+                    <div className="lookingForSection">
+                        <div>
+                            <ProjectLookingFor  project={project} user={user} />
+                        </div>
+                    </div>
+        
+                    <div className='collaboratorsSection'>
+                        <div>
+                            <ProjectCollaborators project={project} user={user}/>
+                        </div>
+                    </div>
+                </div>
 
-            
-                <ProjectLookingFor  project={project} user={user} />
+                {/* <div className="projectPage-container-3">
+                    <div className="carouselSection">
+                        <div>
+                            <ProfileCarousel setUser={setUser} user={user} />
+                        </div>
+                    </div>
 
-     
-         
-               
-                <ProjectCollaborators project={project} user={user}/>
-
-                <ProfileCarousel setUser={setUser} user={user} />
+                </div> */}
             </main>
         )
     }

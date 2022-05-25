@@ -8,7 +8,8 @@ export async function createMessage(senderId,
                                     theMessage,
                                     threadId,
                                     inviteBool,
-                                    projectId) {
+                                    projectId,
+                                    theRole) {
     const payload = {
         sender: senderId,
         receiver: receiverId,
@@ -17,7 +18,8 @@ export async function createMessage(senderId,
         message: theMessage,
         thread: threadId,
         isInvite: inviteBool,
-        project: projectId
+        project: projectId,
+        role: theRole
     }
     console.log(payload)
     return sendRequest(`${BASE_URL}/${threadId}`, 'POST', payload)
@@ -29,4 +31,8 @@ export async function deleteMessage(messageId) {
 
 export async function getMessagesByUser(userId) {
     return sendRequest(`${BASE_URL}/all/${userId}`)
+}
+
+export async function getUnreadMessages(userId){
+    return sendRequest(`${BASE_URL}/unread/${userId}`)
 }

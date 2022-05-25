@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     position: sticky;
-    margin-top: 700px;
+    margin-top: 800px;
 }
 
 .footer button {
@@ -28,14 +28,17 @@
 .navBar {
     display: flex;
     margin-bottom: 0;
+    margin-top: 0;
+    justify-content: center;
 }
 
 #navBar-logo img{
+    max-height: 200px;
+    max-width: 300px;
     margin-top: 20px;
-    margin-left: 311px;
-    margin-bottom: 10px;
-    height: 125px;
+    height: 100px;
 }
+
 
 .userNavButton {
     display: flex;
@@ -80,9 +83,14 @@ hr {
     color: white;    
     display: flex;
     margin: 0;
-    /* width: 100%; */
+    width: 100%;
   }
 
+#logo-image {
+    display: flex;
+    position:relative;
+    width:100%;
+  }
 
  .centered {
     position: absolute;
@@ -122,16 +130,53 @@ h1 {
     margin: 0;
 }
 
+
 .signup-form-page {
     background-color: #202020;
     color: white;
     width: 500px;
     margin-left: 48%;
     margin-right: 25%;
-    margin-top: 20%;
+    margin-top: 24rem;
     font-family: 'Raleway', sans-serif;
     transform: translate(-50%,-50%);
     
+}
+
+.pg-three {
+    background-color: #202020;
+    color: white;
+    width: 500px;
+    margin-left: 48%;
+    margin-right: 25%;
+    margin-top: 28rem;
+    font-family: 'Raleway', sans-serif;
+    transform: translate(-50%,-50%);
+}
+
+.pg-three h2 {
+    font-size: 24pt;
+}
+
+#almostDone {
+    margin-left: 245px;
+}
+
+#completeProfile {
+    margin-left: 170px;
+}
+
+#backButton {
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 100px !important;
+    
+}
+
+.pg-three button {
+    margin-left: 530px;
+    margin-top: 20px;
+
 }
 
 .signup-form-page input {
@@ -143,19 +188,23 @@ h1 {
 }
 
 .signup-form-page input[type="text"] {
-    width: 255px;
+    width: 540px !important;
     height: 44px;
+    color: black;
 }
 
 
 .signup-form-page input[type="email"]{
     width: 540px;
     height: 44px;
+    background: #C4C4C4 !important;
+    color: black;
 }
 
 .signup-form-page input[type="password"] {
     width: 540px;
     height: 44px;
+    color: black;
 } 
 
 .signup-form-page button[type="submit"] {
@@ -194,31 +243,36 @@ h1 {
     border: 1px solid #ECECEC;
     border-radius: 8px;
     height: 44px;
-    width: 200px;
+    width: 150px;
+    color: black;
 }
 
 #keywordLabel input[type="text"] {
     width: 540px;
     height: 44px;
+    color: black;
 }
 
 .signup-form-buttons {
-    margin-left: 40%;
-    margin-right: 25%;
-    position: absolute;
-    top: 110%;
+    background-color: rgba(0, 0, 0, 0);
 }
-
 
 #backButton {
     color: white;
+    background-color: rgba(0, 0, 0, 0);
     width: 150px;
     margin: 20px;
     border: none;
+    margin-left: 30%;
+    margin-right: 70%;
+    margin-bottom: 25rem;
+    padding-bottom: 40rem;
     height: 50px;
+    position: absolute;
+    top: 55rem;
 }
 
-#nextButton {
+#nextButton{
     width: 150px;
     border-radius: 5%;
     height: 50px;
@@ -226,11 +280,19 @@ h1 {
     border: 1px solid rgba(38, 204, 215, 0.5);
     border-radius: 8px;
     color: rgba(38, 204, 215, 0.5);
+    margin-left: 60%;
+    margin-right: 25%;
+    position: absolute;
+    top: 55rem;
 }
 
 .team {
     display: flex;
-    margin-top: 7%;
+    margin-top: 4rem;
+    margin-bottom: 7rem;
+    margin-left: 17rem;
+    margin-right: auto;
+    justify-items: center;
 }
 
 .team img {
@@ -239,6 +301,7 @@ h1 {
     height: 150px;
     border: 1px solid #ECECEC;
     margin-right: 20px;
+    margin-bottom: 20px;
 
 }
 
@@ -260,6 +323,10 @@ h1 {
     margin-bottom: 30px;
 }
 
+.teammember-text {
+    margin-bottom: 30px;
+}
+
 #columnOneTeam {
     margin-left: 20px;
     margin-right: 20px;
@@ -268,7 +335,8 @@ h1 {
 #aboutTitle h1 {
     color: #26CCD7; 
     font-size: 48px;
-    margin-top: 30px;
+    margin-top: 3rem;
+    text-align: center;
 }
 
 
@@ -277,11 +345,11 @@ h1 {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 16px;
     align-items: center;
     color: #ECECEC;
 }
+
 
 textarea {
     box-sizing: border-box;
@@ -289,10 +357,19 @@ textarea {
     height: 142.68px;
     left: 496.21px;
     top: 456.32px;
-
     background: #C4C4C4;
     border: 1px solid #ECECEC;
     border-radius: 8px;
+}
+
+.website-links{
+    columns: 2;
+    padding: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    /* column-width: 100%; */
+    column-gap: 50%;
+    
 }
 
 .website-links input[type="url"] {
@@ -302,6 +379,14 @@ textarea {
     height: 44px;
     width: 350px;
 } 
+
+#website {
+    margin-top: 2em;
+}
+
+#website > #aboutMe {
+    justify-content: space-evenly;
+}
 
 .profile-img-and-links img {
     width: 255px;
@@ -374,6 +459,10 @@ textarea {
     margin-left: -30px;
 }
 
+.image-upload-buttons {
+    margin-left: 230px;
+}
+
 .image-upload-buttons button {
     height: 44px;
     width: 160px;
@@ -381,6 +470,8 @@ textarea {
     border: 1px solid #26CCD7;
     border-radius: 8px;
     color: #26CCD7;
+    margin-top: 15px;
+    margin-left: 25px;
 }
 
 .ImageContainer h1 {
@@ -442,7 +533,7 @@ textarea {
 
 
 .inbox-navbar-categories button {
-    width: 255px;
+    width: 225px;
     height: 44px;
     background: #454545;
     border: 2px solid #353535;
@@ -452,13 +543,6 @@ textarea {
     font-size: 16px;
     color:#ECECEC;
 }
-
-/* .inbox-page {
-    background: #121212;
-    width: 1110px;
-    height: 850px;  
-} */
-
 
 .teamMember-name {
     padding-left: 20px;
@@ -481,6 +565,11 @@ textarea {
     color: #ECECEC;
     margin-top: 18px;
     margin-bottom: 20px;
+}
+
+
+.userAbout-roles ul {
+    text-align: left !important;
 }
 
 .ProfilePageProjects h2 {
@@ -519,7 +608,7 @@ textarea {
 
 .find-collab-container {
     margin-left: 308px;
-    margin-right: 310px;
+    margin-right: 50px;
 }
 
 
@@ -538,7 +627,7 @@ textarea {
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 18px;
     color: #ECECEC;
 }
 
@@ -579,21 +668,12 @@ textarea {
     height: 40px;
     background-color: #121212;
     border-top: 1px solid #26CCD7;
-    margin-top: 50px;
+
     padding-left: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
-.collab-column-1 {
-    display: flex;
-    flex-direction: column;
-}
-
-.collab-column-2 {
-    display: flex;
-    flex-direction: column;
-}
 
 .collab-header h1 {
     margin-left: 308px;
@@ -622,11 +702,14 @@ textarea {
     border: 1px solid #26CCD7;
     border-radius: 8px;
     margin-top: 15px;
+    margin-bottom: 30px;
 }
 
 .collab-img img {
     border: 1px solid #ECECEC;
     border-radius: 50%;
+    margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 .collab-name h5 {
@@ -639,8 +722,6 @@ textarea {
 
 .collaborators {
     display: flex;
-    flex-direction: column;
-    margin-left: 50px;
 }
 
 .collab-col-1 {
@@ -651,6 +732,9 @@ textarea {
 .collab-col-2 {
     display: flex;
     flex-direction: column;
+    margin-left: 50px;
+    width: 600px;
+    margin-top: 50px;
 }
 
 .collab-col-3 {
@@ -668,3 +752,327 @@ textarea {
     margin-bottom: 64px;
 }
 
+.collab-columns {
+    display: flex;
+}
+
+.collab-column-1 {
+    display: flex;
+    flex-direction: column;
+    width: 735px;
+}
+
+.collab-column-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.findProject-columns {
+    display: flex;
+}
+.findProject-column-1 .findProject-column-2 {
+    margin-top: 20px;
+}
+
+.projectItem-container {
+    border-bottom: 1px solid #ECECEC;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    display: flex;
+    margin-right: 300px;
+}
+
+
+
+.projectItem-container h5 {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    color: #26CCD7;
+}
+
+.projectItem-1 button {
+    background: rgba(38, 204, 215, 0.2);
+    border: 1px solid #26CCD7;
+    border-radius: 8px;
+    width:160px;
+    height: 44px;
+    margin-top: 30px;
+}
+
+.projectItem-2 {
+    margin-left: 50px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    color: #ECECEC;
+}
+
+.projectPage-container {
+    margin-left: 404px;
+    margin-top: 50px;
+    display: flex;
+    width: 1035px;
+
+}
+
+.projectPage-container img {
+    margin-right: 40px;
+    
+}
+
+.projectPage-container h1 {
+    margin-left: -85px;
+    margin-bottom: 50px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    display: flex;
+    color: #26CCD7;
+}
+
+.projectPage-column-1 {
+    margin-top: 100px;
+    display: flex;
+    margin-top: 50px;
+    display: flex;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #ECECEC;
+
+}
+
+.projectPage-column-2 {
+    margin-top: 100px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #ECECEC;
+}
+
+.projectPage-column-3 {
+    margin-top: 50px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #ECECEC;
+}
+
+.projectPage-column-3 h3 {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 16px;
+    color: #ECECEC;
+}
+
+.projectPage-column-1 button {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #26CCD7;
+    background: rgba(38, 204, 215, 0.2);
+    border: 1px solid #26CCD7;
+    border-radius: 8px;
+    height: 44px;
+    width: 160px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-left: 20px;
+    margin-left: 50px;
+}
+
+.projectPage-column-3 img {
+    border: 2px solid #ECECEC;
+    border-radius: 50%;
+    margin-top: 25px;
+}
+
+.projectPage-container-2 {
+    margin-left: 404px;
+    margin-top: 50px;
+    display: block;
+}
+
+.lookingFor-card {
+    margin-top: 50px;
+    width: 260px;
+    height: 180px;
+
+}
+
+.lookingFor-card h4 {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    color: #26CCD7;
+}
+
+.lookingFor-card button {
+    background: rgba(38, 204, 215, 0.2);
+    border: 1px solid #26CCD7;
+    color: #26CCD7;
+    height: 44px;
+    width: 160px;
+    border-radius: 8pt;
+    margin-left: 50px;
+    margin-top: 15px;
+    font-family: 'Open Sans';
+    font-style: normal;
+}
+
+.profile-image-upload img{
+    border: 2px solid #ECECEC;
+    border-radius: 50%;
+    margin-left: 275px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.profile-image-upload p {
+    margin-left: 255px;
+    margin-top: 30px;
+}
+
+
+
+.lookingFor-header h3 {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    color: #ECECEC;
+
+}
+
+#editProfile {
+    text-align: left !important;
+}
+
+#organizer {
+    margin-left: 300px;
+}
+
+#organizer img {
+    margin-left: 20px;
+    height: 65px;
+    width: 65px;
+    border: 1px solid #ECECEC;
+    border-radius: 50%;
+}
+
+.loading-screen {
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+}
+
+.profile-about-and-roles-area textarea[type="text"] {
+    background: #ECECEC;
+    width: 400px;
+    height: 200px;
+    text-align: left;
+    border-radius: 8pt;
+    word-wrap: break-word;
+    word-break: break-all;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.profile-about-and-roles-area label {
+    text-align: left !important;
+    padding-bottom: 20px !important;
+}
+
+.social-links button {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    padding-left: 35px;
+    padding-top: 10px;
+    margin-left: 65px;
+}
+
+.userAbout-roles button {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 60px;
+    padding-top: 10px;
+}
+
+.profile-img-and-links input[type="text"] {
+    background: #ECECEC !important;
+    width: 400px !important;
+    height: 50px;
+    text-align: left;
+    padding: 10px;
+    border-radius: 8pt;
+}
+
+.profile-img-and-links label {
+    text-align: left !important;
+}
+
+.ReactModal__Content {
+    padding-left: 100px;
+
+}
+
+.ReactModal__Content h2 {
+    padding-left: -100px !important;
+}
+
+.ReactModal__Content button {
+    margin-top: 50px;
+}
+
+.ReactModal__Content input[type='url'] {
+    background: #ECECEC !important;
+    width: 400px !important;
+    height: 50px;
+    text-align: left;
+    padding: 10px;
+    border-radius: 8pt;
+    margin-right: 20px;
+}
+
+.filterRoles {
+    /* margin-top: 100px !important; */
+    margin-bottom: 100px;
+}
+
+.filterRoles label {
+    padding: 5px;
+}
+
+#lookingFor h3 {
+    margin-top: 25px;
+    margin-bottom : 25px;
+}
+
+.apply-filter-button button {
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+input[type="text"] {
+    color: black;
+}
+
+.project-container {
+    margin-bottom: 150px;
+}
