@@ -59,6 +59,9 @@ export default function SignUpForm({ user, setUser }) {
         try {
             delete formData.error
             delete formData.confirm
+            if(!formData.profileImageUrl){
+                delete formData.profileImageUrl
+            }
             const response = await signUp(formData)
             setUser(response)
             // console.log(response) // log new user to screen
