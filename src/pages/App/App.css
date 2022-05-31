@@ -1076,3 +1076,7 @@ input[type="text"] {
 .project-container {
     margin-bottom: 150px;
 }
+
+main {
+    margin-bottom: 500px;
+}
