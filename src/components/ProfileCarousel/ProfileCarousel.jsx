@@ -13,10 +13,10 @@ const [counter, setCounter ] = useState(0)
 const [formData, setFormData] = useState({
   carouselImg: '',
 })
-const [ newUserData, SetNewUserData ] = useState(user)
+const [ newUserData, SetNewUserData ] = useState(profileUser)
 
 const updateUserOnMongoDb = async () => {
-  const payload = user
+  const payload = profileUser
   payload.profileCarousel = carousel
   // console.log(payload)
   const response = await updateUser(newUserData)
@@ -38,7 +38,7 @@ useEffect(() => {
 }, [image])
 
 useEffect(() => {
-  setCarousel(user.profileCarousel)
+  setCarousel(profileUser.profileCarousel)
 },[])
   
   return(

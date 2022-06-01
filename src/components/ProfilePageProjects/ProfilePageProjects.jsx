@@ -24,7 +24,7 @@ export default function ProfilePageProjects({ user, profileUser }) {
             <div className='ProfilePageProjects'>
     
                 <div className='myProjects '>
-                    <h2>My Projects</h2>
+                    <h2>{user._id === profileUser._id ? "My " : `${profileUser.firstName}'s `} Projects</h2>
                     {
                         projects.map((project,idx) => {
                             return (
@@ -53,7 +53,7 @@ export default function ProfilePageProjects({ user, profileUser }) {
         return (
             <div className='ProfilePageProjects'>
                 <div className='myProjects '>
-                    <h2>My Projects</h2>
+                    <h2>{user._id === profileUser._id ? "My " : `${profileUser.firstName}'s `} Projects</h2>
                     {profileUser._id === user._id && <Link to='/create-project'><button>Create Project</button></Link>}
                 </div>
                 <div className='divider'>

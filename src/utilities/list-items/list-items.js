@@ -56,7 +56,7 @@ export const artistRoles=[
     {role: "Photographer"},
     {role: "Model"},
     {role: "Make Up Artist"},
-    {role: " Hair Stylist"},
+    {role: "Hair Stylist"},
     {role: "Wardrobe Stylist"},
     {role: "Fashion Designer"},
     {role: "Artist"},

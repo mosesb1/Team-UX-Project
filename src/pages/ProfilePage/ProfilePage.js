@@ -38,7 +38,7 @@ export default function ProfilePage({ user, setUser }){
                     <ProfilePageProjects profileUser={profileUser} user={user} setUser={setUser}/>
                     
                     <div className="gallery-header">
-                        <h2>My Gallery</h2>
+                        <h2>{user._id === profileUser._id ? "My " : `${profileUser.firstName}'s `} Gallery</h2>
                         {user._id === profileUser._id && <button>Edit Gallery</button>}
                     </div>
 
