@@ -39,7 +39,7 @@ useEffect(() => {
 
 useEffect(() => {
   setCarousel(profileUser.profileCarousel)
-},[])
+},[profileUser])
   
   return(
 

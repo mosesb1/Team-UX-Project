@@ -17,7 +17,7 @@ export default function ProfilePageProjects({ user, profileUser }) {
 
     useEffect(() => {
         getProjects();
-    },[])
+    },[profileUser])
 
     const loaded = () => {
         return (
