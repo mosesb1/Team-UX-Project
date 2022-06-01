@@ -21,7 +21,7 @@ export default function ProfilePage({ user, setUser }){
 
     useEffect(() => {
         findUser()
-    },[])
+    },[id])
 
 
     const loaded = () => {
